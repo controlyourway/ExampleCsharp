@@ -1,0 +1,7 @@
+ExampleCsharp.v12.suo
+build.bat
+nuget.exe
+ExampleCsharp.exe*
+ExampleCsharp.pdb
+ExampleCsharp.vshost.*
+obj/
