@@ -42,7 +42,7 @@
             this.labelBufferedAmount = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.listBoxNetworkNames = new System.Windows.Forms.ListBox();
+            this.textBoxToNetworks = new System.Windows.Forms.TextBox();
             this.labelSelectNetworkNames = new System.Windows.Forms.Label();
             this.textBoxToSessionIDs = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -193,7 +193,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.listBoxNetworkNames);
+            this.groupBox1.Controls.Add(this.textBoxToNetworks);
             this.groupBox1.Controls.Add(this.labelSelectNetworkNames);
             this.groupBox1.Controls.Add(this.textBoxToSessionIDs);
             this.groupBox1.Controls.Add(this.label8);
@@ -207,24 +207,24 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Send to:";
             // 
-            // listBoxNetworkNames
+            // textBoxToNetworks
             // 
-            this.listBoxNetworkNames.Enabled = false;
-            this.listBoxNetworkNames.FormattingEnabled = true;
-            this.listBoxNetworkNames.Location = new System.Drawing.Point(8, 148);
-            this.listBoxNetworkNames.Name = "listBoxNetworkNames";
-            this.listBoxNetworkNames.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
-            this.listBoxNetworkNames.Size = new System.Drawing.Size(206, 121);
-            this.listBoxNetworkNames.TabIndex = 109;
+            this.textBoxToNetworks.Enabled = false;
+            this.textBoxToNetworks.Location = new System.Drawing.Point(9, 148);
+            this.textBoxToNetworks.Multiline = true;
+            this.textBoxToNetworks.Name = "textBoxToNetworks";
+            this.textBoxToNetworks.Size = new System.Drawing.Size(205, 121);
+            this.textBoxToNetworks.TabIndex = 109;
+            this.textBoxToNetworks.Text = "network 1";
             // 
             // labelSelectNetworkNames
             // 
             this.labelSelectNetworkNames.AutoSize = true;
             this.labelSelectNetworkNames.Location = new System.Drawing.Point(6, 132);
             this.labelSelectNetworkNames.Name = "labelSelectNetworkNames";
-            this.labelSelectNetworkNames.Size = new System.Drawing.Size(119, 13);
+            this.labelSelectNetworkNames.Size = new System.Drawing.Size(157, 13);
             this.labelSelectNetworkNames.TabIndex = 108;
-            this.labelSelectNetworkNames.Text = "Select Network Names:";
+            this.labelSelectNetworkNames.Text = "Set Network Names (1 per line):";
             // 
             // textBoxToSessionIDs
             // 
@@ -533,7 +533,6 @@
         private System.Windows.Forms.Label labelBufferedAmount;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ListBox listBoxNetworkNames;
         private System.Windows.Forms.Label labelSelectNetworkNames;
         private System.Windows.Forms.TextBox textBoxToSessionIDs;
         private System.Windows.Forms.Label label8;
@@ -561,6 +560,7 @@
         private System.Windows.Forms.TextBox textBoxSendData;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Timer timerUpdateRequestCount;
+        private System.Windows.Forms.TextBox textBoxToNetworks;
     }
 }
 

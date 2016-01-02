@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -125,10 +126,13 @@ namespace ExampleCsharp
             if (radioButtonSelectedNetworks.Checked)
             {
                 //when this option is selected then the message will be sent to the all the devices which are listening to the selected networks
-                for (int i = 0; i < listBoxNetworkNames.SelectedIndices.Count; i++)
+                using (StringReader sr = new StringReader(textBoxToNetworks.Text))
                 {
-                    int selectedIndex = listBoxNetworkNames.SelectedIndices[i];
-                    sendData.toNetworks.Add(listBoxNetworkNames.Items[selectedIndex].ToString());
+                    string line;
+                    while ((line = sr.ReadLine()) != null) //split textbox text into lines
+                    {
+                        sendData.toNetworks.Add(line);
+                    }
                 }
                 if (sendData.toNetworks.Count == 0)
                 {
@@ -187,9 +191,14 @@ namespace ExampleCsharp
         private List<string> GetNetworks()
         {
             List<string> networks = new List<string>();
-            for (int i = listBoxNetworkNames.SelectedIndices.Count - 1; i >= 0; i--)
+
+            using (StringReader sr = new StringReader(textBoxToNetworks.Text))
             {
-                networks.Add((string)listBoxNetworkNames.Items[listBoxNetworkNames.SelectedIndices[i]]);
+                string line;
+                while ((line = sr.ReadLine()) != null) //split textbox text into lines
+                {
+                    networks.Add(line);
+                }
             }
             return networks;
         }
@@ -233,15 +242,15 @@ namespace ExampleCsharp
             {
                 case "radioButtonDefaultNetworks":
                     textBoxToSessionIDs.Enabled = false;
-                    listBoxNetworkNames.Enabled = false;
+                    textBoxToNetworks.Enabled = false;
                     break;
                 case "radioButtonSessionIDs":
                     textBoxToSessionIDs.Enabled = true;
-                    listBoxNetworkNames.Enabled = false;
+                    textBoxToNetworks.Enabled = false;
                     break;
                 case "radioButtonSelectedNetworks":
                     textBoxToSessionIDs.Enabled = false;
-                    listBoxNetworkNames.Enabled = true;
+                    textBoxToNetworks.Enabled = true;
                     break;
             }
         }
