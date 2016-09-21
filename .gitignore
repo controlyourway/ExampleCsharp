@@ -5,3 +5,4 @@ ExampleCsharp.exe*
 ExampleCsharp.pdb
 ExampleCsharp.vshost.*
 obj/
+*.suo
