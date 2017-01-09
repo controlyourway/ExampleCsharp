@@ -254,5 +254,10 @@ namespace ExampleCsharp
                     break;
             }
         }
+
+        private void checkBoxUseWebSockets_CheckedChanged(object sender, EventArgs e)
+        {
+            cywControl.UseWebsocket = checkBoxUseWebSockets.Checked;
+        }
     }
 }

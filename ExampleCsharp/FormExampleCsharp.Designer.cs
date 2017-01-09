@@ -70,6 +70,7 @@
             this.textBoxSendData = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.timerUpdateRequestCount = new System.Windows.Forms.Timer(this.components);
+            this.checkBoxUseWebSockets = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -147,7 +148,7 @@
             // 
             // textBoxInstanceName
             // 
-            this.textBoxInstanceName.Location = new System.Drawing.Point(184, 138);
+            this.textBoxInstanceName.Location = new System.Drawing.Point(182, 148);
             this.textBoxInstanceName.Multiline = true;
             this.textBoxInstanceName.Name = "textBoxInstanceName";
             this.textBoxInstanceName.Size = new System.Drawing.Size(144, 20);
@@ -157,7 +158,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(181, 122);
+            this.label10.Location = new System.Drawing.Point(179, 132);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(82, 13);
             this.label10.TabIndex = 148;
@@ -165,7 +166,7 @@
             // 
             // buttonSetInstanceName
             // 
-            this.buttonSetInstanceName.Location = new System.Drawing.Point(184, 164);
+            this.buttonSetInstanceName.Location = new System.Drawing.Point(182, 174);
             this.buttonSetInstanceName.Name = "buttonSetInstanceName";
             this.buttonSetInstanceName.Size = new System.Drawing.Size(142, 24);
             this.buttonSetInstanceName.TabIndex = 147;
@@ -473,11 +474,25 @@
             this.timerUpdateRequestCount.Interval = 1000;
             this.timerUpdateRequestCount.Tick += new System.EventHandler(this.timerUpdateRequestCount_Tick);
             // 
+            // checkBoxUseWebSockets
+            // 
+            this.checkBoxUseWebSockets.AutoSize = true;
+            this.checkBoxUseWebSockets.Checked = true;
+            this.checkBoxUseWebSockets.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBoxUseWebSockets.Location = new System.Drawing.Point(186, 112);
+            this.checkBoxUseWebSockets.Name = "checkBoxUseWebSockets";
+            this.checkBoxUseWebSockets.Size = new System.Drawing.Size(105, 17);
+            this.checkBoxUseWebSockets.TabIndex = 155;
+            this.checkBoxUseWebSockets.Text = "Use WebSocket";
+            this.checkBoxUseWebSockets.UseVisualStyleBackColor = true;
+            this.checkBoxUseWebSockets.CheckedChanged += new System.EventHandler(this.checkBoxUseWebSockets_CheckedChanged);
+            // 
             // FormExampleCsharp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(567, 674);
+            this.Controls.Add(this.checkBoxUseWebSockets);
             this.Controls.Add(this.buttonSetDownloadRequestTimeout);
             this.Controls.Add(this.textBoxDownloadRequestTimeout);
             this.Controls.Add(this.label11);
@@ -561,6 +576,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Timer timerUpdateRequestCount;
         private System.Windows.Forms.TextBox textBoxToNetworks;
+        private System.Windows.Forms.CheckBox checkBoxUseWebSockets;
     }
 }
 
